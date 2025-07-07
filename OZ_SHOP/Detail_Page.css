@@ -1,0 +1,87 @@
+body {
+    background-color: #f1e8df;
+}
+
+.category-container {
+    position: relative;
+    display: inline-block;
+}
+
+#category-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#category-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#category-menu li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#category-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .table {
+    color: #ffffff;
+    background-color: #212529;
+}
+
+.dark-mode .form-control {
+    background-color: #343a40;
+    color: #ffffff;
+    border-color: #6c757d;
+}
+
+.dark-mode .form-select {
+    background-color: #343a40;
+    color: #ffffff;
+    border-color: #6c757d;
+}
+
+.dark-mode .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.dark-mode .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.dark-mode .page-link {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #dee2e6;
+}
+
+.dark-mode .page-item.disabled .page-link {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #6c757d;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+        <link rel="stylesheet" href="User.css">
+</head>
+<body>
+    <form id="signup-form">
+        <h2>OZ SHOP 회원가입</h2>
+
+        <fieldset>
+            <legend>기본 정보</legend>
+            <label for="username">이름</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" name="userid" required>
+
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="password-confirm">비밀번호 확인</label>
+            <input type="password" id="password-confirm" name="password-confirm" required>
+
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>추가 정보</legend>
+            <label for="birthdate">생년월일</label>
+            <input type="date" id="birthdate" name="birthdate">
+
+            <p>성별</p>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">여성</label>
+            </div>
+
+            <label for="development_field">관심 브랜드</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="frontend" name="development_field" value="frontend">
+                <label for="frontend">SUPREME</label>
+                <input type="checkbox" id="backend" name="development_field" value="backend">
+                <label for="backend">NIKE</label>
+                <input type="checkbox" id="fullstack" name="development_field" value="fullstack">
+                <label for="fullstack">DIESEL</label>
+                <input type="checkbox" id="fullstack" name="development_field" value="fullstack">
+                <label for="fullstack">MUSIC&GOODS</label>
+            </div>
+
+            <label for="join-path">가입 경로</label>
+            <select id="join-path" name="join-path">
+                <option value="">선택하세요</option>
+                <option value="internet">인터넷 검색</option>
+                <option value="friend">지인 추천</option>
+                <option value="ad">광고</option>
+                <option value="etc">기타</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>주소</legend>
+            <label for="postcode">우편번호</label>
+            <input type="text" id="postcode" name="postcode" required>
+
+            <label for="address">주소</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="detail-address">상세 주소</label>
+            <input type="text" id="detail-address" name="detail-address">
+        </fieldset>
+
+        <fieldset>
+            <label for="inquiry">문의사항</label>
+            <textarea id="inquiry" name="inquiry" rows="5"></textarea>
+        </fieldset>
+
+        <button type="submit">회원가입 완료</button>
+    </form>
+    <script src="User.js"></script>
+</body>
+</html>

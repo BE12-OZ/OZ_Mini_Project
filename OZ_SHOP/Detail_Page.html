@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>OZ SHOP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(#f1e8df);
+        min-height: 100vh;
+        
+    }
+    
+    .hero-container { 
+        width: 100%;
+        max-width: 1200px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #A67C52 0%, #B5845A 15%, #C49268 30%, #D4A276 45%, #E8B584 60%, #F2C892 75%, #FDDBA0 90%, #FFE8AE 100%);
+        border-radius: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    .geometric-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .shape {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 8s ease-in-out infinite;
+    }
+    
+    .shape-1 {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 232, 174, 0.3);
+        border-radius: 50%;
+        top: 10%;
+        right: 15%;
+        animation-delay: -2s;
+    }
+    
+    .shape-2 {
+        width: 150px;
+        height: 150px;
+        background: rgba(212, 162, 118, 0.3);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        top: 60%;
+        left: 10%;
+        animation-delay: -4s;
+    }
+    
+    .shape-3 {
+        width: 100px;
+        height: 100px;
+        background: rgba(196, 146, 104, 0.3);
+        border-radius: 20px;
+        top: 20%;
+        left: 20%;
+        animation-delay: -6s;
+    }
+    
+    .main-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+    }
+    
+    .brand-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: #FFFFFF; 
+        letter-spacing: 12px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        animation: titleGlow 3s ease-in-out infinite alternate;
+        text-transform: uppercase;
+    }
+    
+    .brand-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: #FFFFFF;
+        font-weight: 300;
+        letter-spacing: 4px;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .accent-line {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, #FFFFFF, #FFE8AE);
+        margin: 20px auto;
+        border-radius: 2px;
+        animation: lineGlow 4s ease-in-out infinite;
+    }
+    
+    .fashion-icons {
+        display: flex;
+        gap: 30px;
+        margin-top: 40px;
+        opacity: 0.7;
+    }
+    
+    .icon {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #FFFFFF;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .icon:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    
+    .dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #FFFFFF;
+        border-radius: 50%;
+        opacity: 0.4;
+        animation: twinkle 2s ease-in-out infinite;
+    }
+    
+    .dot:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
+    .dot:nth-child(2) { top: 35%; right: 30%; animation-delay: 0.5s; }
+    .dot:nth-child(3) { bottom: 25%; left: 35%; animation-delay: 1s; }
+    .dot:nth-child(4) { bottom: 40%; right: 25%; animation-delay: 1.5s; }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    @keyframes titleGlow {
+        0% { text-shadow: 2px 2px 20px rgba(253, 219, 160, 0.9); }
+        100% { text-shadow: 2px 2px 30px rgba(253, 219, 160, 0.9); }
+    }
+    
+    @keyframes lineGlow {
+        0%, 100% { opacity: 0.7; width: 80px; }
+        50% { opacity: 1; width: 120px; }
+    }
+    
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.5); }
+    }
+    
+    @media (max-width: 768px) {
+        .brand-title {
+            font-size: 2.8rem;
+            letter-spacing: 6px;
+        }
+        
+        .brand-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        
+        .fashion-icons {
+            gap: 20px;
+        }
+        
+        .icon {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+    }
+
+    .brand-title {
+        color: #FFFFFF; 
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    body.dark-mode {
+        background: #1a1a1a; 
+        color: #e0e0e0; 
+    }
+    body.dark-mode .brand-title {
+        color: #FFFFFF;
+        text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.2);
+    }
+    .container h3 {
+        color: #FFFFFF;
+    }
+    .top-buttons-spacing {
+        margin-top: 80px; 
+        position: relative; 
+        z-index: 10; 
+    }
+    
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 5px;
+    }
+    
+    body.dark-mode .card {
+        background-color: #212529;
+        color: #ffffff;
+        box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+    }
+    body.dark-mode .card-text {
+        color: #cccccc;
+    }
+    .product-cards-box {
+        border: 2px solid #FFFFFF; 
+        border-radius: 15px; 
+        padding: 20px; 
+        margin-top: 30px; 
+        background-color: rgba(255, 255, 255, 0.1); 
+    }
+    
+    body.dark-mode .product-cards-box {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .brand-title {
+        color: #a47864 !important; 
+    }
+    .container h3 {
+        color: #a47864 !important;
+    }
+    .page-link {
+        color: #a47864; 
+    }
+    .page-item.active .page-link {
+        background-color: #a47864;
+        border-color: #a47864;
+        color: #FFFFFF; 
+    }
+    .page-item.disabled .page-link {
+        color: #cccccc; 
+    }
+  </style>
+</head>
+<body>
+    <div class="geometric-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="floating-elements">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+  <div class="container mt-3">
+    <h1 class="brand-title" id="oz-shop-title">OZ SHOP</h1>
+    <div class="d-flex justify-content-end align-items-center top-buttons-spacing">
+      <button id="dark-mode-toggle" class="btn btn-secondary me-2">🌙</button>
+      <button id="signup-btn" class="btn btn-primary" style="background-color: #a47864; border-color: #a47864;">회원가입</button>
+    </div>
+    <h3 class="mt-5 mb-5">신규 등록 상품</h3>
+    <form class="row row-cols-lg-auto g-3 align-items-center" style="position: relative; z-index: 5;">      
+      <div class="col-12">
+        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+        <select class="form-select" id="inlineFormSelectPref" name="category_data_table">
+          <!-- 셀렉트요소의 name="category_data_table"은 지우거나 변경하면 안돼요 -->
+          <option selected>카테고리</option>
+          <option value="상의">상의</option>
+          <option value="하의">하의</option>
+          <option value="신발">신발</option>
+          <option value="패션잡화">패션잡화</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label class="visually-hidden" for="brandSelect">브랜드</label>
+        <select class="form-select" id="brandSelect">
+          <option selected>브랜드</option>
+          <option value="Supreme">Supreme</option>
+          <option value="DIESEL">DIESEL</option>
+          <option value="Nike">Nike</option>
+          <option value="Music&Goods">Music&Goods</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label class="visually-hidden" for="genderSelect">성별</label>
+        <select class="form-select" id="genderSelect">
+          <option selected>성별</option>
+          <option value="male">남성</option>
+          <option value="female">여성</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="제품명을 입력해주세요">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary" style="background-color: #a47864; border-color: #a47864;">조회</button>
+      </div>
+    </form>
+
+    <div class="container mt-3">
+      <div class="product-cards-box">
+        <div id="product-cards-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- 제품 카드들이 여기에 추가됩니다. -->
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center mt-4" id="pagination-controls">
+        <!-- 페이지네이션 버튼들이 여기에 추가됩니다. -->
+      </ul>
+    </nav>
+    <div id="current-time" class="text-end me-3"></div>
+  </div>
+
+  <script>
+    // 제품 데이터
+    const product_data = [
+      { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000', image_url: 'https://placehold.co/300x200/E8B584/FFFFFF?text=Hoodie' },
+      { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Pants' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Shoes' },
+      { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Accessory' },
+      { category: "상의", brand: 'Nike', product: '나이키 맨투맨', price: '80,000', image_url: 'https://placehold.co/300x200/C49268/FFFFFF?text=Nike+Sweater' },
+      { category: "하의", brand: 'Supreme', product: '슈프림 조거 팬츠', price: '250,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Supreme+Jogger' },
+      { category: "신발", brand: 'DIESEL', product: '디젤 스니커즈', price: '220,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Diesel+Sneakers' },
+      { category: "패션잡화", brand: 'Nike', product: '나이키 볼캡', price: '45,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Nike+Cap' },
+      { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000', image_url: 'https://placehold.co/300x200/E8B584/FFFFFF?text=Hoodie' },
+      { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Pants' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Shoes' },
+      { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Accessory' },
+      { category: "상의", brand: 'Nike', product: '나이키 맨투맨', price: '80,000', image_url: 'https://placehold.co/300x200/C49268/FFFFFF?text=Nike+Sweater' },
+      { category: "하의", brand: 'Supreme', product: '슈프림 조거 팬츠', price: '250,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Supreme+Jogger' },
+      { category: "신발", brand: 'DIESEL', product: '디젤 스니커즈', price: '220,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Diesel+Sneakers' },
+      { category: "패션잡화", brand: 'Nike', product: '나이키 볼캡', price: '45,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Nike+Cap' },
+      { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000', image_url: 'https://placehold.co/300x200/E8B584/FFFFFF?text=Hoodie' },
+      { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Pants' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Shoes' },
+      { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Accessory' },
+      { category: "상의", brand: 'Nike', product: '나이키 맨투맨', price: '80,000', image_url: 'https://placehold.co/300x200/C49268/FFFFFF?text=Nike+Sweater' },
+      { category: "하의", brand: 'Supreme', product: '슈프림 조거 팬츠', price: '250,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Supreme+Jogger' },
+      { category: "신발", brand: 'DIESEL', product: '디젤 스니커즈', price: '220,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Diesel+Sneakers' },
+      { category: "패션잡화", brand: 'Nike', product: '나이키 볼캡', price: '45,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Nike+Cap' },
+      { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000', image_url: 'https://placehold.co/300x200/E8B584/FFFFFF?text=Hoodie' },
+      { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Pants' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Shoes' },
+      { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Accessory' },
+      { category: "상의", brand: 'Nike', product: '나이키 맨투맨', price: '80,000', image_url: 'https://placehold.co/300x200/C49268/FFFFFF?text=Nike+Sweater' },
+      { category: "하의", brand: 'Supreme', product: '슈프림 조거 팬츠', price: '250,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Supreme+Jogger' },
+      { category: "신발", brand: 'DIESEL', product: '디젤 스니커즈', price: '220,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Diesel+Sneakers' },
+      { category: "패션잡화", brand: 'Nike', product: '나이키 볼캡', price: '45,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Nike+Cap' },
+      { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000', image_url: 'https://placehold.co/300x200/E8B584/FFFFFF?text=Hoodie' },
+      { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Pants' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Shoes' },
+      { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Accessory' },
+      { category: "상의", brand: 'Nike', product: '나이키 맨투맨', price: '80,000', image_url: 'https://placehold.co/300x200/C49268/FFFFFF?text=Nike+Sweater' },
+      { category: "하의", brand: 'Supreme', product: '슈프림 조거 팬츠', price: '250,000', image_url: 'https://placehold.co/300x200/D4A276/FFFFFF?text=Supreme+Jogger' },
+      { category: "신발", brand: 'DIESEL', product: '디젤 스니커즈', price: '220,000', image_url: 'https://placehold.co/300x200/A67C52/FFFFFF?text=Diesel+Sneakers' },
+      { category: "패션잡화", brand: 'Nike', product: '나이키 볼캡', price: '45,000', image_url: 'https://placehold.co/300x200/B5845A/FFFFFF?text=Nike+Cap' },
+    ];
+
+    const productCardsContainer = document.getElementById('product-cards-container');
+    const categorySelect = document.getElementById('inlineFormSelectPref');
+    const brandSelect = document.getElementById('brandSelect');
+    const genderSelect = document.getElementById('genderSelect');
+    const productSearchInput = document.querySelector('input[placeholder="제품명을 입력해주세요"]');
+    const searchButton = document.querySelector('button[type="submit"]');
+    const paginationControls = document.getElementById('pagination-controls');
+
+    const itemsPerPage = 9; // 한 페이지에 보여줄 제품 수
+    let currentPage = 1;
+    let filteredProducts = []; // 필터링된 제품들을 저장할 배열
+
+    function renderProducts(productsToRender) {
+      productCardsContainer.innerHTML = '';
+      if (productsToRender.length === 0) {
+        productCardsContainer.innerHTML = '<p class="text-center text-white-50">검색 결과가 없습니다.</p>';
+        return;
+      }
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const productsToDisplay = productsToRender.slice(startIndex, endIndex);
+
+      productsToDisplay.forEach((item) => {
+        const cardHtml = `
+          <div class="col">
+            <div class="card h-100">
+              <img src="${item.image_url}" class="card-img-top" alt="${item.product}">
+              <div class="card-body">
+                <h5 class="card-title">${item.product}</h5>
+                <p class="card-text">브랜드: ${item.brand}</p>
+                <p class="card-text">카테고리: ${item.category}</p>
+                <p class="card-text">가격: ${item.price}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        productCardsContainer.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    function setupPagination(products) {
+      paginationControls.innerHTML = '';
+      const pageCount = Math.ceil(products.length / itemsPerPage);
+
+      if (pageCount <= 1) return; // 페이지가 하나뿐이면 페이지네이션을 표시하지 않음
+
+      // 이전 버튼
+      const prevLi = document.createElement('li');
+      prevLi.classList.add('page-item');
+      if (currentPage === 1) {
+        prevLi.classList.add('disabled');
+      }
+      const prevA = document.createElement('a');
+      prevA.classList.add('page-link');
+      prevA.href = '#';
+      prevA.textContent = '이전';
+      prevA.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          renderProducts(filteredProducts);
+          setupPagination(filteredProducts);
+        }
+      });
+      prevLi.appendChild(prevA);
+      paginationControls.appendChild(prevLi);
+
+      for (let i = 1; i <= pageCount; i++) {
+        const li = document.createElement('li');
+        li.classList.add('page-item');
+        if (i === currentPage) {
+          li.classList.add('active');
+        }
+        const a = document.createElement('a');
+        a.classList.add('page-link');
+        a.href = '#';
+        a.textContent = i;
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = i;
+          renderProducts(filteredProducts);
+          setupPagination(filteredProducts);
+        });
+        li.appendChild(a);
+        paginationControls.appendChild(li);
+      }
+
+      // 다음 버튼
+      const nextLi = document.createElement('li');
+      nextLi.classList.add('page-item');
+      if (currentPage === pageCount) {
+        nextLi.classList.add('disabled');
+      }
+      const nextA = document.createElement('a');
+      nextA.classList.add('page-link');
+      nextA.href = '#';
+      nextA.textContent = '다음';
+      nextA.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < pageCount) {
+          currentPage++;
+          renderProducts(filteredProducts);
+          setupPagination(filteredProducts);
+        }
+      });
+      nextLi.appendChild(nextA);
+      paginationControls.appendChild(nextLi);
+    }
+
+    function filterProducts() {
+      const selectedCategory = categorySelect.value === '카테고리' ? '' : categorySelect.value;
+      const selectedBrand = brandSelect.value === '브랜드' ? '' : brandSelect.value;
+      const selectedGender = genderSelect.value === '성별' ? '' : genderSelect.value;
+      const searchTerm = productSearchInput.value.toLowerCase();
+
+      filteredProducts = product_data.filter(item => {
+        const matchesCategory = selectedCategory ? item.category === selectedCategory : true;
+        const matchesBrand = selectedBrand ? item.brand === selectedBrand : true;
+        const matchesGender = selectedGender ? true : true; 
+        const matchesSearchTerm = searchTerm ? item.product.toLowerCase().includes(searchTerm) : true;
+
+        return matchesCategory && matchesBrand && matchesGender && matchesSearchTerm;
+      });
+      currentPage = 1; 
+      renderProducts(filteredProducts);
+      setupPagination(filteredProducts);
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      filterProducts(); // 초기 로딩 시 필터링 및 페이지네이션 설정
+
+      // 회원가입 버튼 클릭 시 User.html로 이동
+      const signupBtn = document.getElementById('signup-btn');
+      if (signupBtn) {
+          signupBtn.style.cursor = 'pointer'; // 클릭 가능한 커서 추가
+          signupBtn.removeAttribute('disabled'); // 혹시 모를 disabled 속성 제거
+          signupBtn.addEventListener('click', () => {
+              window.location.href = 'User.html';
+          });
+      }
+    });
+
+    // 필터 변경 시 이벤트 리스너
+    categorySelect.addEventListener('change', filterProducts);
+    brandSelect.addEventListener('change', filterProducts);
+    genderSelect.addEventListener('change', filterProducts);
+    productSearchInput.addEventListener('input', filterProducts); // 입력 시 바로 필터링
+    searchButton.addEventListener('click', (event) => {
+      event.preventDefault(); // 폼 제출 방지
+      filterProducts();
+    });
+
+    // 현재 시간 표시 (기존 코드 유지)
+    const currentTime = document.getElementById('current-time');
+
+    function updateTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      currentTime.innerText = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // 다크 모드 토글 (기존 코드 유지)
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+
+    
+
+    
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

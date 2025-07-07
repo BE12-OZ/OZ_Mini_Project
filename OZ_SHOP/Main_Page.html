@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OZ SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Main_Page.css">
+    <div class="hero-container">
+        <div class="geometric-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="brand-title" id="oz-shop-title">OZ SHOP</h1>
+            <div class="accent-line"></div>
+            <p class="brand-subtitle">2025 FASHION TREND</p>
+            
+            <div class="fashion-icons">
+                <div class="icon">👗</div>
+                <div class="icon">👖</div>
+                <div class="icon">👜</div>
+                <div class="icon">👠</div>
+            </div>
+        </div>
+        
+        <div class="floating-elements">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ozShopTitle = document.getElementById('oz-shop-title');
+            if (ozShopTitle) {
+                ozShopTitle.style.cursor = 'pointer'; // 클릭 가능한 시각적 표시
+                ozShopTitle.addEventListener('click', function() {
+                    window.location.href = 'Detail_Page.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
