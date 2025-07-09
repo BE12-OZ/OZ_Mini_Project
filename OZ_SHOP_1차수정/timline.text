@@ -1,0 +1,28 @@
+// Detail_Page.html에 있던 인라인 CSS와 <style> 태그 내의 CSS를 Detail_Page.css로 이동하고, HTML 파일에서 해당 CSS를 참조하도록 수정했습니다.
+// RegistrationComplete.html에 있던 <style> 태그 내의 CSS를 RegistrationComplete.css라는 새 파일로 이동하고, HTML 파일에서 해당 CSS를 참조하도록 수정했습니다.
+// 다크모드 활성화 후 새로고침 시 비활성화 되는 현상을 local_storage로 해결했습니다.
+
+//   - css 및 js 폴더를 생성했습니다.
+   - 모든 CSS와 JavaScript 파일을 각각의 폴더로 이동했습니다.
+   - HTML 파일 내의 경로를 모두 업데이트했습니다.
+   - Detail_Page.html과 Main_Page.html의 인라인 JavaScript를 별도의 .js 파일로 추출했습니다.
+
+  /Users/gwang_il_jeon/Desktop/OZ/My_Pr/oz_mini_project/OZ_SHOP/
+  ├───.DS_Store
+  ├───1.timline.text
+  ├───Detail_Page.html
+  ├───Main_Page.html
+  ├───RegistrationComplete.html
+  ├───User.html
+  ├───css/
+  │   ├───Detail_Page.css
+  │   ├───Main_Page.css
+  │   ├───RegistrationComplete.css
+  │   └───User.css
+  ├───js/
+  │   ├───Detail_Page.js
+  │   ├───Main_Page.js
+  │   └───User.js
+  └───.venv/
+      ...
+
