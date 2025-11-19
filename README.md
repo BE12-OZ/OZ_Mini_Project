@@ -30,28 +30,28 @@ Flask 프레임워크를 사용하여 개발된 온라인 쇼핑몰 웹 애플�
   3. 프로젝트 구조                                                                                                                                               
                                                                                                                                                                  
 OZ_SHOP_1차수정/                                                                                                                                           
-├── app.py                  # 메인 Flask 애플리케이션 파일 (라우트, 모델, 비즈니스 로직)                                                                   
-├── requirements.txt        # Python 종속성 목록                                                                                                           
-├── create_admin.py         # (옵션) 관리자 계정 생성 유틸리티 스크립트                                                                                    
-├── .venv/                  # Python 가상 환경                                                                                                             
-├── migrations/             # Flask-Migrate (Alembic) 데이터베이스 마이그레이션 스크립트                                                                   
-│   ├── versions/           # 마이그레이션 파일들                                                                                                          
-│   └── ...                                                                                                                                                
-├── static/                 # 정적 파일 (CSS, JavaScript, 이미지 등)                                                                                       
-│   ├── css/                # 스타일시트 파일                                                                                                              
-│   │   ├── Admin.css                                                                                                                                      
-│   │   ├── Main_Page.css                                                                                                                                  
-│   │   └── ...                                                                                                                                            
-│   └── js/                 # JavaScript 파일                                                                                                              
-│       ├── Admin_Product_Management.js                                                                                                                    
-│       ├── Main_Page.js                                                                                                                                   
-│       └── ...                                                                                                                                            
-└── templates/              # HTML 템플릿 파일 (Jinja2)                               
-├── base.html           # 기본 레이아웃 템플릿           
-├── Main_Page.html      # 메인 페이지               
-├── Login_Page.html     # 로그인 페이지      
-├── Admin_Dashboard.html # 관리자 대시보드             
-└── ...    
+    app.py                  # 메인 Flask 애플리케이션 파일 (라우트, 모델, 비즈니스 로직)                                                                   
+    requirements.txt        # Python 종속성 목록                                                                                                           
+    create_admin.py         # (옵션) 관리자 계정 생성 유틸리티 스크립트                                                                                    
+    .venv/                  # Python 가상 환경                                                                                                             
+    migrations/             # Flask-Migrate (Alembic) 데이터베이스 마이그레이션 스크립트                                                                   
+        versions/           # 마이그레이션 파일들                                                                                                          
+        ...                                                                                                                                                
+    static/                 # 정적 파일 (CSS, JavaScript, 이미지 등)                                                                                       
+        css/                # 스타일시트 파일                                                                                                              
+            Admin.css                                                                                                                                      
+            Main_Page.css                                                                                                                                  
+            ...                                                                                                                                            
+        js/                 # JavaScript 파일                                                                                                              
+            Admin_Product_Management.js                                                                                                                    
+            Main_Page.js                                                                                                                                   
+            ...                                                                                                                                            
+    templates/              # HTML 템플릿 파일 (Jinja2)                               
+    base.html           # 기본 레이아웃 템플릿           
+    Main_Page.html      # 메인 페이지               
+    Login_Page.html     # 로그인 페이지      
+    Admin_Dashboard.html # 관리자 대시보드             
+    ...    
 
   4. 핵심 기능 흐름                                                                                                                                              
                                                                                                                                                                  
