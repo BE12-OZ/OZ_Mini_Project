@@ -1,3 +1,12 @@
+![2](https://github.com/user-attachments/assets/5dce98ba-a93e-44c8-91d5-64a032b2e5d7)
+![9](https://github.com/user-attachments/assets/84713571-760d-46f9-bdfb-e1d340898689)
+![11](https://github.com/user-attachments/assets/7fa7e55f-6346-408c-9cea-ec03e291308d)
+![12](https://github.com/user-attachments/assets/870717eb-d560-44d4-b37c-480b1fc73045)
+![14](https://github.com/user-attachments/assets/1659aa0b-b898-4764-ae82-eaf17bfe5e54)
+![15](https://github.com/user-attachments/assets/62a19bc8-0524-435d-96b4-d5315c19eb19)
+![16](https://github.com/user-attachments/assets/1802c970-03fb-4b0f-8f4b-7c6ea106c5ca)
+![18](https://github.com/user-attachments/assets/5d99e145-3d3c-4e7e-8b93-8e16ef37db4e)
+
 ## OZ 온라인 쇼핑몰 (Flask 기반) 프로젝트 개요
 
 이 문서는 Flask 프레임워크를 사용하여 개발된 온라인 쇼핑몰 웹 애플리케이션의 핵심 내용을 요약합니다. 본 프로젝트는 기본적인 전자상거래 기능을 구현하여 웹 개발의 전반적인 과정을 이해하고 실습하는 데 중점을 두었습니다.
@@ -10,15 +19,6 @@
 *   **장바구니 기능**: 상품 장바구니 추가, 장바구니 상품 조회 및 비우기
 *   **주문 기능**: 장바구니 상품을 이용한 주문 생성, 주문 완료 페이지
 *   **보안**: 비밀번호 해싱 (Werkzeug), 관리자 권한 및 로그인 필수 데코레이터 적용
-
-![2](https://github.com/user-attachments/assets/5dce98ba-a93e-44c8-91d5-64a032b2e5d7)
-![9](https://github.com/user-attachments/assets/84713571-760d-46f9-bdfb-e1d340898689)
-![11](https://github.com/user-attachments/assets/7fa7e55f-6346-408c-9cea-ec03e291308d)
-![12](https://github.com/user-attachments/assets/870717eb-d560-44d4-b37c-480b1fc73045)
-![14](https://github.com/user-attachments/assets/1659aa0b-b898-4764-ae82-eaf17bfe5e54)
-![15](https://github.com/user-attachments/assets/62a19bc8-0524-435d-96b4-d5315c19eb19)
-![16](https://github.com/user-attachments/assets/1802c970-03fb-4b0f-8f4b-7c6ea106c5ca)
-![18](https://github.com/user-attachments/assets/5d99e145-3d3c-4e7e-8b93-8e16ef37db4e)
 
 ### 2. 기술 스택
 
